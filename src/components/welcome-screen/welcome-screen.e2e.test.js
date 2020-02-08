@@ -12,14 +12,12 @@ it(`Should welcome button be pressed`, () => {
 
   const welcomeScreen = shallow(
       <WelcomeScreen
-        errorsCount={3}
+        errors={3}
         onWelcomeButtonClick={onWelcomeButtonClick}
       />
   );
 
-  const welcomeButton = welcomeScreen.find(`button.welcome__button`);
+  welcomeScreen.find(`.welcome__button`).simulate(`click`);
 
-  welcomeButton.props().onClick();
-
-  expect(onWelcomeButtonClick.mock.calls.length).toBe(1);
+  expect(onWelcomeButtonClick).toHaveBeenCalledTimes(1);
 });
