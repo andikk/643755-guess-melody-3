@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
-
-const Settings = {
-  ERRORS: 3
-};
+import questions from "./mocks/questions.js";
+import settings from "./mocks/settings";
 
 ReactDOM.render(
-    <App errors={Settings.ERRORS}/>,
+    <App errors={settings.errors}
+      questions={questions}/>,
     document.getElementById(`root`)
 );
